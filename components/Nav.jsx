@@ -11,6 +11,7 @@ const Nav = () => {
     const isUserLoggedIn = true;
 
     const [ providers, setProviders ] = useState(null);
+    const [ toggleDropDown, setToggleDropDown ] = useState(false);
     
     useEffect(() => {
         const setUpProviders = async () => {
@@ -43,10 +44,13 @@ const Nav = () => {
             {isUserLoggedIn ? (
                 <div className='flex gap-3 md:gap-5'>
                     <Link href="/register-car" className='black_btn'>
-                        Register Your Car
+                        My Dashboard
                     </Link>
-                    <Link href="/register-car" className='black_btn'>
-                        Track Your Car
+                    <Link href="/find-car" className='black_btn'>
+                        Find My Car
+                    </Link>
+                    <Link href="/data" className='black_btn'>
+                        Data and Analytics
                     </Link>
             
                     <button type="button" onClick={signOut} className='outline_btn'> 
@@ -54,7 +58,7 @@ const Nav = () => {
                     </button>
                     <Link href="/profile">
                         <Image 
-                            src="/assets/images/logo.png"
+                            src="/assets/images/park.png"
                             width={37}
                             height={37}
                             className='rounded_full'
@@ -80,7 +84,77 @@ const Nav = () => {
         )
       }
       </div>
-      
+
+      {/* Mobile Nav */}
+      <div className='sm:hidden flex relative'>
+        {
+            isUserLoggedIn ? (
+                <div className='flex'>
+                    <Image 
+                        src="/assets/images/park.png"
+                        width={37}
+                        height={37}
+                        className='rounded_full'
+                        alt="profile"
+                        onClick={ () => setToggleDropDown(prev => !prev)}
+                    />
+                    {
+                        toggleDropDown && (
+                            <div className='dropdown'>
+                                <Link 
+                                    href='/bio'
+                                    className='dropdown_link'
+                                    onClick={ () => setToggleDropDown(false)}
+                                >
+                                    My Dashboard
+                                </Link>
+                                <Link 
+                                    href='/track'
+                                    className='dropdown_link'
+                                    onClick={ () => setToggleDropDown(false)}
+                                >
+                                    Find My Car
+                                </Link>
+                                <Link 
+                                    href='/track'
+                                    className='dropdown_link'
+                                    onClick={ () => setToggleDropDown(false)}
+                                >
+                                    Data and Analytics
+                                </Link>
+                                <button
+                                    type='button'
+                                    onClick={ () => {
+                                        setToggleDropDown(false)
+                                        signOut();
+                                    }}
+                                    className='mt-5 w-full black_btn'
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        )
+                    }
+                </div>
+            ): (
+                <>
+                    {
+                        providers && 
+                        Object.values(providers).map((provider) => (
+                          <button
+                            type='button'
+                            key={providers.name}
+                            onClick={() => signIn(provider.id)}
+                            className='black_btn'
+                          >
+                            Sign In
+                          </button>
+                        ))
+                    }
+                </>
+            )
+        }
+      </div>
     </nav>
   )
 }
