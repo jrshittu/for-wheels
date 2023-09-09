@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Biometric = () => {
+const page = () => {
   return (
     <div>
-      Biometric
+      Hello Bio
     </div>
   )
 }
 
-export default Biometric
+export default page
