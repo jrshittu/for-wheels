@@ -45,6 +45,10 @@ const Nav = () => {
                     <Link href="/register-car" className='black_btn'>
                         Register Your Car
                     </Link>
+                    <Link href="/register-car" className='black_btn'>
+                        Track Your Car
+                    </Link>
+            
                     <button type="button" onClick={signOut} className='outline_btn'> 
                         Sign Out
                     </button>

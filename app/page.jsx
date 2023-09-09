@@ -8,14 +8,14 @@ const Page = () => {
         <div className='sm:flex hidden'>
             <Image 
                 src="/assets/images/park.png"
-                width={180}
+                width={220}
                 height={100}
                 className='rounded_full'
                 alt="profile"
             />
         </div>
       
-        <h1 className='head_text text-center'>
+        <h1 className='head_text text-center green_gradient'>
             Discover ParkEase
         <br className='max-md:hidden'/>
         </h1>
