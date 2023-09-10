@@ -20,7 +20,7 @@ const Page = () => {
       <h1 className="text-2xl font-bold mb-4">QR Code Generator and Scanner</h1>
       <button
         onClick={toggleMode}
-        className="bg-blue-500 text-white px-4 py-2 rounded-md"
+        className="bg-blue-500 text-white px-4 py-2 rounded-md mb-4"
       >
         {mode === 'generate' ? 'Switch to Scan Mode' : 'Switch to Generate Mode'}
       </button>
