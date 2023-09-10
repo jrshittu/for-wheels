@@ -50,9 +50,6 @@ const Nav = () => {
                     <Link href="/find-car" className='black_btn'>
                         Check Parking Space
                     </Link>
-                    <Link href="/data" className='black_btn'>
-                        Data and Analytics
-                    </Link>
             
                     <button type="button" onClick={signOut} className='outline_btn'> 
                         Sign Out
@@ -116,13 +113,7 @@ const Nav = () => {
                                 >
                                     Check Parking Space
                                 </Link>
-                                <Link 
-                                    href='/track'
-                                    className='dropdown_link'
-                                    onClick={ () => setToggleDropDown(false)}
-                                >
-                                    Data and Analytics
-                                </Link>
+                                
                                 <button
                                     type='button'
                                     onClick={ () => {
