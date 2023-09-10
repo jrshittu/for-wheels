@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import QRCodeGenerator from '@components/QRCodeGenerator'; 
 import QRCodeScanner from '@components/QRCodeScanner'; 
-import Link from 'next/link';
 
 const Page = () => {
   const [mode, setMode] = useState('generate'); // 'generate' or 'scan'
