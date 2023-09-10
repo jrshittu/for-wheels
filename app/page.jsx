@@ -18,9 +18,8 @@ const Page = () => {
         <h1 className='head_text text-center green_gradient'>
             Discover ParkEase
         <br className='max-md:hidden'/>
+        <p className='orange_gradient'>Streamlining Parking Solutions</p>
         </h1>
-
-        <h1 className='head_text text-center orange_gradient'>Streamlining Parking Solutions</h1>
 
         <p className='desc text-center'>
         ParkEase is an innovative app designed to

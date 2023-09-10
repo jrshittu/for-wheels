@@ -8,7 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 
 const Nav = () => {
-    
+
     const { data: session } = useSession();
 
     const [ providers, setProviders ] = useState(null);
@@ -48,7 +48,7 @@ const Nav = () => {
                         My Dashboard
                     </Link>
                     <Link href="/find-car" className='black_btn'>
-                        Find My Car
+                        Check Parking Space
                     </Link>
                     <Link href="/data" className='black_btn'>
                         Data and Analytics
@@ -114,7 +114,7 @@ const Nav = () => {
                                     className='dropdown_link'
                                     onClick={ () => setToggleDropDown(false)}
                                 >
-                                    Find My Car
+                                    Check Parking Space
                                 </Link>
                                 <Link 
                                     href='/track'
