@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import QRCode from 'qrcode.react';
 
-const QrCode = () => {
+const QRCodeGenerator = ({ data }) => {
   return (
-    <div>
-      Qrcode
+    <div className="qrcode-generator">
+      <QRCode value={data} />
     </div>
-  )
-}
+  );
+};
 
-export default QrCode
+export default QRCodeGenerator;
