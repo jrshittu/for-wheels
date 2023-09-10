@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import QRCodeGenerator from '@components/QRCodeGenerator'; // Import your QRCodeGenerator component
+import QRCodeGenerator from '@components/QRCodeGenerator'; 
 import QRCodeScanner from '@components/QRCodeScanner'; 
+import Link from 'next/link';
 
 const Page = () => {
   const [mode, setMode] = useState('generate'); // 'generate' or 'scan'
@@ -33,6 +34,8 @@ const Page = () => {
         <p className="mt-4 text-green-500">Scanned Data: {scannedData}</p>
       )}
     </div>
+    
+   
   );
 };
 
