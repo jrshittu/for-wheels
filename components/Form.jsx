@@ -52,13 +52,15 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           />
         </label>
 
-        <button
-          type="button"
-          onClick={handleNext}
-          className="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
-        >
-          {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
-        </button>
+        <div className='flex-end mx-3 mb-5 gap-4'>
+          <button
+            type="button"
+            onClick={handleNext}
+            className="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+          >
+            {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
+          </button>
+        </div>
       </form>
     </section>
   );
