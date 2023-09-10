@@ -43,7 +43,7 @@ const Page = () => {
 
   return (
     <Form 
-        type="Form"
+        type="Questionnaire"
         post={post}
         setPost= {setPost}
         submitting={submitting}

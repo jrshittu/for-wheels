@@ -7,6 +7,9 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       <h1 className='head_text text-left'>
         <span className='orange_gradient'>{type}</span>
       </h1>
+      <p className='desc text-left max-w-md'>
+        Take your time to tell us how you feel about our services.
+      </p>
 
     </section>
   )
