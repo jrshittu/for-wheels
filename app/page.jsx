@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Page = () => {
   return (
@@ -26,6 +27,9 @@ const Page = () => {
             transform your parking experience. With cutting-edge features, ParkEase
             redefines convenience and efficiency in car parking management.
         </p>
+        <Link href="/bio/form" className='black_btn mt-2'>
+                        Open Questionnaire
+        </Link>
 
   </section>
   )
