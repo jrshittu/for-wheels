@@ -3,18 +3,36 @@ import React, { useState } from 'react';
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  // Define your questions as an array
+  // Define your questions and default placeholders as an array of objects
   const questions = [
-    'How satisfied are you with our services?',
-    'What can we improve to serve you better?',
-    'What do enjoy most from our services?',
-    'Which of our service is the hardest to use?'
+    {
+      question: 'How satisfied are you with our services?',
+      placeholder: 'Rate your satisfaction (1-5)',
+    },
+    {
+      question: 'What can we improve to serve you better?',
+      placeholder: 'Provide your suggestions here',
+    },
+    {
+      question: 'What do you enjoy most from our services?',
+      placeholder: 'Share your favorite aspects',
+    },
+    {
+      question: 'Which of our services is the hardest to use?',
+      placeholder: 'Tell us the service you find challenging',
+    },
     // Add more questions here
   ];
 
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+
+      // Clear the input value when moving to the next question
+      setPost({
+        ...post,
+        question: '', // Clear the input value
+      });
     } else {
       // If there are no more questions, you can submit the feedback
       handleSubmit();
@@ -36,7 +54,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       >
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            {questions[currentQuestion]}
+            {questions[currentQuestion].question}
           </span>
           <textarea
             value={post.question}
@@ -46,7 +64,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
                 question: e.target.value,
               })
             }
-            placeholder="Write here"
+            placeholder={questions[currentQuestion].placeholder}
             required
             className="form_textarea"
           />
