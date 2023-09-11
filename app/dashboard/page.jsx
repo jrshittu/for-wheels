@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import BiometricAuthButton from '@components/Biometric';
 
 const Page = () => {
     const { data: session } = useSession();
 
     const [ providers, setProviders ] = useState(null);
-    const [ toggleDropDown, setToggleDropDown ] = useState(false);
     
     useEffect(() => {
         const setUpProviders = async () => {
@@ -76,6 +76,8 @@ const Page = () => {
             </Link>
            
         </div>
+
+        <BiometricAuthButton />
 
     </section>
   )
