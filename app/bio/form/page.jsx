@@ -10,8 +10,6 @@ const Page = () => {
     const [ submitting, setSubmitting ] = useState(false);
     const [ post, setPost ] = useState([]);
 
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-
     const createQuestion = async (e) => {
       e.preventDefault();
       setSubmitting(true);
