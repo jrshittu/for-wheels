@@ -1,4 +1,4 @@
-"use effect";
+"use client";
 
 import React, { useState, useEffect } from 'react';
 
@@ -10,10 +10,10 @@ const ParkingData = () => {
       const data = [
         { id: 1, name: 'Parking Lot A', available: true },
         { id: 2, name: 'Parking Lot B', available: false },
-        { id: 1, name: 'Parking Lot C', available: true },
-        { id: 2, name: 'Parking Lot D', available: false },
-        { id: 1, name: 'Parking Lot E', available: true },
-        { id: 2, name: 'Parking Lot F', available: false },
+        { id: 3, name: 'Parking Lot C', available: true },
+        { id: 4, name: 'Parking Lot D', available: false },
+        { id: 5, name: 'Parking Lot E', available: true },
+        { id: 6, name: 'Parking Lot F', available: false },
       ];
 
       setParkingData(data);
@@ -21,6 +21,11 @@ const ParkingData = () => {
 
     fetchParkingData();
   }, []);
+
+  useEffect(() => {
+    // This effect will run whenever parkingData changes
+    // You can add any logic here that you want to run when parkingData changes
+  }, [parkingData]);
 
   const handleBookSpace = (id) => {
     // Create a copy of the parkingData array
