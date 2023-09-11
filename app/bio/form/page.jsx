@@ -15,18 +15,24 @@ const Page = () => {
     const createQuestion = async (e) => {
       e.preventDefault();
       setSubmitting(true);
-      
+
       try{
-        const response = await fetch('/api/form/new', {
+        const response = await fetch('/api/question/new', {
           method: 'POST',
           body: JSON.stringify({
             post: post.question,
             userId: session?.user.id,
-            tag: post.tag
           })
         })
-      } catch (error){
 
+        if (response.ok){
+          router.push('/dashboard');
+        }
+
+      } catch (error){
+        console.log("error");
+      } finally{
+        setSubmitting(false);
       }
     }
 
