@@ -29,7 +29,7 @@ const Page = () => {
       <div className='sm:flex'>
         {
           session?.user ? (
-            <div>
+            <div className='rounded-full'>
               <Image 
                 src={session?.user.image}
                 width={150}
