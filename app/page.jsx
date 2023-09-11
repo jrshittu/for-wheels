@@ -28,9 +28,6 @@ const Page = () => {
                             Scan QR Code
             </Link>
         </div>
-
-        <h1 className='orange_gradient head_text text-center mt-2'>Streamlining Parking Solutions</h1>
-        
         <p className='desc text-center'>
             ParkEase is an innovative app designed to transform your parking experience. With cutting-edge features, ParkEase redefines convenience and efficiency in car parking management. Kindly attend to questionnaire below to help us improve our services.
         </p>
