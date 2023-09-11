@@ -1,12 +1,11 @@
 "use client";
-import React, { useState } from 'react';
-import ParkingData from '@components/ParkingData';
-import Head from 'next/head';
-import GeolocationComponent from '@components/GeoLocation';
-import MappingComponent from '@components/MappingComponet';
+
+import React, { useState } from "react";
+import ParkingData from "@components/ParkingData";
+import GeolocationComponent from "@components/GeoLocation";
+import MappingComponet from "@components/MappingComponet";
 
 const Page = () => {
-
   const [userLocation, setUserLocation] = useState(null);
   const [parkingSpaces, setParkingSpaces] = useState([]); // You will fetch this data from your API
 
@@ -18,20 +17,18 @@ const Page = () => {
 
   return (
     <div>
-
-      <Head>
-        <title>Parking Locator</title>
-      </Head>
-
+      
       <h1>Parking Locator</h1>
       <GeolocationComponent onLocationChange={handleLocationChange} />
-      {userLocation && (
-        <MappingComponent userLocation={userLocation} parkingSpaces={parkingSpaces} />
+      {userLocation !== null ? (
+        <MappingComponet userLocation={userLocation} parkingSpaces={parkingSpaces} />
+      ) : (
+        <p>Loading user location...</p>
       )}
 
-      <ParkingData />npm
+      <ParkingData />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
