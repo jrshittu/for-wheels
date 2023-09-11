@@ -75,8 +75,9 @@ const Page = () => {
             <Link href="/bio" className='black_btn mx-2'>
                             Scan QR Code
             </Link>
-            <UserRes />
+           
         </div>
+        <UserRes />
 
     </section>
   )
