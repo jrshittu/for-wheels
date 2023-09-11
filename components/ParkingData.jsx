@@ -1,4 +1,5 @@
-"use client";
+"use effect";
+
 import React, { useState, useEffect } from 'react';
 
 const ParkingData = () => {
@@ -6,21 +7,34 @@ const ParkingData = () => {
 
   useEffect(() => {
     const fetchParkingData = () => {
-        
-        const data = [
-            { id: 1, name: 'Parking Lot A', available: true },
-            { id: 2, name: 'Parking Lot B', available: false },
-            { id: 1, name: 'Parking Lot C', available: true },
-            { id: 2, name: 'Parking Lot D', available: false },
-            { id: 1, name: 'Parking Lot E', available: true },
-            { id: 2, name: 'Parking Lot F', available: false },
-        ]
+      const data = [
+        { id: 1, name: 'Parking Lot A', available: true },
+        { id: 2, name: 'Parking Lot B', available: false },
+        { id: 1, name: 'Parking Lot C', available: true },
+        { id: 2, name: 'Parking Lot D', available: false },
+        { id: 1, name: 'Parking Lot E', available: true },
+        { id: 2, name: 'Parking Lot F', available: false },
+      ];
 
-        setParkingData(data);
-    }
-        
+      setParkingData(data);
+    };
+
     fetchParkingData();
   }, []);
+
+  const handleBookSpace = (id) => {
+    // Create a copy of the parkingData array
+    const updatedParkingData = [...parkingData];
+
+    // Find the parking space by id
+    const spaceToUpdate = updatedParkingData.find((space) => space.id === id);
+
+    // Update the availability to "Occupied"
+    if (spaceToUpdate) {
+      spaceToUpdate.available = false;
+      setParkingData(updatedParkingData);
+    }
+  };
 
   return (
     <div className="app bg-white rounded-lg shadow-md p-4">
@@ -34,7 +48,13 @@ const ParkingData = () => {
                 {space.available ? 'Available' : 'Occupied'}
               </span>
               <span className="">
-                {space.available ? <button className='black_btn m-4' onClick={() =>{}}>Book Space</button> : false }
+                {space.available ? (
+                  <button className='black_btn m-4' onClick={() => handleBookSpace(space.id)}>
+                    Book Space
+                  </button>
+                ) : (
+                  false
+                )}
               </span>
             </div>
           </li>
