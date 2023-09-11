@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <section className="w-full flex-center flex-col">
 
-        <div className='sm:flex hidden'>
+        <div className='sm:flex'>
             <Image 
                 src="/assets/images/park.png"
                 width={280}
