@@ -13,7 +13,21 @@ const Page = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const createQuestion = async (e) => {
+      e.preventDefault();
+      setSubmitting(true);
+      
+      try{
+        const response = await fetch('/api/form/new', {
+          method: 'POST',
+          body: JSON.stringify({
+            post: post.question,
+            userId: session?.user.id,
+            tag: post.tag
+          })
+        })
+      } catch (error){
 
+      }
     }
 
   return (
