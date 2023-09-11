@@ -6,7 +6,10 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Form from '@components/Form';
 
-const Page = () => {
+const CreateQuestion = () => {
+    const router = useRouter();
+    const { data: session } = useSession();
+
     const [ submitting, setSubmitting ] = useState(false);
     const [ post, setPost ] = useState([]);
 
@@ -45,4 +48,4 @@ const Page = () => {
   )
 }
 
-export default Page;
+export default CreateQuestion;

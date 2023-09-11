@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import UserRes from '@components/UserRes';
 
 const Page = () => {
     const { data: session } = useSession();
@@ -74,6 +75,7 @@ const Page = () => {
             <Link href="/bio" className='black_btn mx-2'>
                             Scan QR Code
             </Link>
+            <UserRes />
         </div>
 
     </section>
