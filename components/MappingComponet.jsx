@@ -21,7 +21,7 @@ const MappingComponent = ({ userLocation, parkingSpaces }) => {
       {parkingSpaces.map((space) => (
         <Marker
           key={space.id}
-          position={[space.latitude, space.longitude]}
+          position={[-20.153942, -64.840629]}
         ></Marker>
       ))}
       <Marker position={userLocation}></Marker>
