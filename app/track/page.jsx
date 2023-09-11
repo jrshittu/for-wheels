@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import ParkingData from '@components/ParkingData';
 import Head from 'next/head';
-import GeolocationComponent from '../components/GeolocationComponent';
-import MappingComponent from '../components/MappingComponent';
+import GeolocationComponent from '@components/GeoLocation';
+import MappingComponent from '@components/MappingComponet';
 
 const Page = () => {
 
