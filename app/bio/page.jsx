@@ -11,7 +11,7 @@ const Page = () => {
 
   const toggleMode = () => {
     setMode(mode === 'generate' ? 'scan' : 'generate');
-    setQRData('');
+    setQRData('Hello');
     setScannedData(null);
   };
 
