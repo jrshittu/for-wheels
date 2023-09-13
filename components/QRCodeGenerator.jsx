@@ -12,9 +12,7 @@ const QRCodeGenerator = ({ id }) => {
         <QRCode value={inputValue} />
       </div>
 
-      <input className='mt-2 border-4 border-black border-solid ' type='text' onChange={(e) => setInputValue(e.target.value)}>
-
-      </input>
+      <input className='mt-2 border-4 border-black border-solid ' type='text' onChange={(e) => setInputValue(e.target.value)} />
     </>
   );
 };
