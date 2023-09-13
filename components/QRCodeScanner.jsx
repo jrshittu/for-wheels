@@ -1,29 +1,36 @@
 import React, { useState } from 'react';
-import QrReader from 'reactjs-qr-reader';
+import QrReader from 'react-web-qr-reader';
 
-const QRCodeScanner = ({ setScannedData }) => {
-  const [error, setError] = useState(null);
+const QRCodeScanner = () => {
+  const delay = 500;
 
-  const handleScan = (data) => {
-    if (data) {
-      setScannedData(data);
+  const previewStyle = {
+    height: 240,
+    width: 320,
+  };
+
+  const [result, setResult] = useState('No result');
+
+  const handleScan = (result) => {
+    if (result) {
+      setResult(result);
     }
   };
 
-  const handleError = (err) => {
-    setError(err);
+  const handleError = (error) => {
+    console.log(error);
   };
 
   return (
-    <div className="qrcode-scanner">
+    <>
       <QrReader
-        delay={300}
+        delay={delay}
+        style={previewStyle}
         onError={handleError}
         onScan={handleScan}
-        style={{ width: '100%' }}
       />
-      {error && <p className="text-red-500">{error}</p>}
-    </div>
+      <p>{result}</p>
+    </>
   );
 };
 

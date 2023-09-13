@@ -25,7 +25,7 @@ const Page = () => {
         {mode === 'generate' ? 'Switch to Scan Mode' : 'Switch to Generate Mode'}
       </button>
       {mode === 'generate' ? (
-        <QRCodeGenerator data={qrData} id="12345" />
+        <QRCodeGenerator data={qrData} id="12345"/>
       ) : (
         <QRCodeScanner setScannedData={setScannedData} />
       )}
